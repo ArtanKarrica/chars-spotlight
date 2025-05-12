@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hidden Characters Viewer</title>
+  <style>
+    /* Popup size */
+    html, body {
+      width: 400px;
+      height: 600px;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background: #EEE;
+      padding: 20px;
+    }
+    .main {
+      background: #FFF;
+      border: 2px solid #666;
+      border-radius: 10px;
+      box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+      padding: 1.5em;
+      max-height: 100%;
+      overflow-y: auto;
+    }
+    textarea {
+      width: 100%;
+      height: 120px;
+      padding: 8px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      border: 1px solid #999;
+      resize: vertical;
+      font-family: monospace;
+    }
+    button {
+      background: #4285f4;
+      color: #FFF;
+      border: none;
+      padding: 8px 12px;
+      margin: 5px 3px 5px 0;
+      border-radius: 4px;
+      cursor: pointer;
+      min-width: 70px;
+      font-size: 0.9em;
+    }
+    button:disabled {
+      background: #CCC;
+      cursor: default;
+    }
+    .output {
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #666;
+      border-radius: 4px;
+      background: #FAFAFA;
+      font-family: "Courier New", monospace;
+      white-space: pre-wrap;
+      overflow-wrap: break-word;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .symbol {
+      background: #999;
+      color: #FFF;
+      padding: 0 3px;
+      margin: 0 2px;
+      border-radius: 2px;
+    }
+    .hex {
+      background: #99F;
+      color: #000;
+      padding: 0 3px;
+      margin: 0 2px;
+      border-radius: 2px;
+    }
+    #countContainer {
+      margin-top: 8px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h2>Hidden Characters Viewer</h2>
+    <form id="hiddenCharsForm">
+      <textarea id="inputText" placeholder="Paste text here…"></textarea><br>
+      <button type="submit" id="showBtn" disabled>Show</button>
+      <button type="button" id="removeBtn" disabled>Remove</button>
+      <button type="button" id="copyBtn" disabled>Copy</button>
+      <button type="button" id="clearBtn" disabled>Clear</button>
+    </form>
+    <div id="outputContainer" class="output"></div>
+    <div id="countContainer"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
